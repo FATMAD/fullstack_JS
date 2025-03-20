@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    ports:
+      - "80:80" # expose le frontend sur le port 80
+    networks:
+      - my-network
+
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    ports:
+      - "3000:3000" # expose le backend sur le port 3000
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge

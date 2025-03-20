@@ -1,0 +1,52 @@
+<!-- dashboard.component.html -->
+<div class="container">
+  <h2>User Management Dashboard</h2>
+  
+  <!-- Success Message -->
+  <div *ngIf="successMessage" class="alert alert-success">
+    {{ successMessage }}
+  </div>
+
+  <!-- Error Message -->
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Loading Spinner -->
+  <div *ngIf="isLoading" class="spinner-border text-primary" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+  
+  <!-- User Table -->
+  <table class="table table-bordered mt-3" *ngIf="!isLoading">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Birthdate</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td>{{ user.firstName }} {{ user.lastName }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.birthdate | date }}</td>
+        <td>
+          <button class="btn btn-primary" (click)="editUser(user)">Edit</button>
+          <button class="btn btn-danger" (click)="deleteUser(user.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
+  <!-- Add User Button -->
+  <button class="btn btn-success" (click)="openCreateUserForm()">Add User</button>
+
+  <!-- User Form Modal/Popup -->
+  <app-user-form 
+    *ngIf="showUserForm$ | async" 
+    [user]="selectedUser" 
+    (userSaved)="onUserSaved()">
+  </app-user-form>
+</div>

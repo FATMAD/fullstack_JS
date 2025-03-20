@@ -1,0 +1,110 @@
+/* Style global de la page */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Conteneur pour centrer la page */
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+  
+  /* Style du formulaire d'inscription */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 30px;
+  }
+  
+  /* Champs de saisie */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="date"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: 0.3s;
+  }
+  
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus,
+  input[type="date"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+    outline: none;
+  }
+  
+  /* Bouton d'inscription */
+  button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+  }
+  
+  button[type="submit"]:active {
+    background-color: #004085;
+  }
+  
+  /* Style du lien vers la page de login */
+  .login-link-text {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .login-link-text:hover {
+    text-decoration: underline;
+  }
+  
+  /* Ajout d'un peu d'espace en dessous du formulaire */
+  .mt-3 {
+    margin-top: 20px;
+  }
+  
+  /* Responsive pour les petits écrans */
+  @media (max-width: 576px) {
+    .container {
+      padding: 10px;
+    }
+  
+    .col-md-6 {
+      width: 100%;
+      padding: 10px;
+    }
+  
+    h2 {
+      font-size: 24px;
+    }
+  
+    button[type="submit"] {
+      font-size: 16px;
+    }
+  }
+  
