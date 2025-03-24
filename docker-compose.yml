@@ -1,24 +1,44 @@
-version: '3'
+version: "3.8"
 
 services:
-  frontend:
-    build:
-      context: .
-      dockerfile: frontend/Dockerfile
-    ports:
-      - "80:80" # expose le frontend sur le port 80
-    networks:
-      - my-network
-
+  # Service pour le backend (Fastify)
   backend:
+    container_name: backend
     build:
-      context: .
-      dockerfile: backend/Dockerfile
+      context: ./backend  # Dossier de ton projet backend
+      dockerfile: Dockerfile
     ports:
-      - "3000:3000" # expose le backend sur le port 3000
-    networks:
-      - my-network
+      - "3000:3000"  # Expose le port 3000 du backend
+    environment:
+      DATABASE_URL: "mysql://root:@localhost:3306/onepoint"  # URL de connexion à MySQL
+     
+    depends_on:
+      - db  # Le backend attend que la base de données soit prête
 
-networks:
-  my-network:
-    driver: bridge
+  # Service pour le frontend (Angular)
+  frontend:
+    container_name: frontend
+    build:
+      context: ./frontend  # Dossier de ton projet frontend
+      dockerfile: Dockerfile
+    ports:
+      - "4200:80"  # Expose le port 4200 du frontend (Angular)
+    depends_on:
+      - backend  # Le frontend attend que le backend soit prêt
+
+  # Service pour la base de données MySQL
+  db:
+    container_name: db
+    image: mysql:8.0  # Utilisation de l'image officielle MySQL
+    environment:
+      MYSQL_ROOT_PASSWORD: password  # Mot de passe root pour MySQL
+      MYSQL_DATABASE: mydatabase  # Nom de la base de données
+    ports:
+      - "3306:3306"  # Expose le port 3306 pour la connexion à MySQL
+    volumes:
+      - mysql-data:/var/lib/mysql  # Persiste les données de la base de données
+
+# Volumes persistants pour MySQL
+volumes:
+  mysql-data:
+    driver: local
