@@ -1,13 +1,12 @@
 mat-dialog-content {
-    padding: 20px;
-  }
-  
-  mat-dialog-actions {
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  button {
-    margin: 0 5px;
-  }
-  
+  padding: 20px;
+}
+
+mat-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
+  margin: 0 5px;
+}

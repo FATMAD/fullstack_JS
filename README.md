@@ -20,10 +20,13 @@ Ce projet est une application complète en **TypeScript** conteneurisée avec **
 - **Swagger (Fastify-Swagger)** - Documentation API
 
 ### Frontend :
-- **Angular 19 ** (au choix)
+- **Angular 19 **  
 - **RXJS / Fetch API** - Communication avec l'API
 - **Material UI** (au choix) - UI
 - **Angular Forms** - Validation des formulaires
+- **ESLint** - Linting pour assurer la qualité du code
+- **Prettier** - Formatage automatique du code
+
 
 ### Outils DevOps :
 - **Docker Compose** - Conteneurisation
@@ -35,7 +38,7 @@ Ce projet est une application complète en **TypeScript** conteneurisée avec **
 
 ### Prérequis :
 - **Docker & Docker Compose**
-- **Node.js (18+)**
+- **Node.js 20 **
 - **pnpm / npm / yarn**
 
 ### 🚀 Démarrer le projet
@@ -81,6 +84,7 @@ Accédez au dossier frontend :
    ng serve
  ```
 
+
 4. L'application frontend sera disponible à l'adresse suivante :
 
 http://localhost:4200  
@@ -89,6 +93,24 @@ mail et pasword pour tester le frontend
 
 "email": "teste@example.com",
 "password": "password123",
+
+5. linting :
+** ESLint :   est utilisé pour détecter automatiquement les erreurs de syntaxe, les mauvaises pratiques et les incohérences dans le code 
+
+ ```
+   npm run lint 
+   npm run lint: fix
+ ```
+6.formatage de code :
+
+** Prettier : s'occupe du formatage du code pour garantir qu'il soit uniforme et facile à lire. Cette approche aide à maintenir un code propre, 
+réduit les conflits entre développeurs et simplifie la révision du code.
+
+
+ ```
+   npm run format
+  
+ ```
 
  ## 🎨 Frontend - Fonctionnalités
 ✅ Connexion / Déconnexion
@@ -124,7 +146,7 @@ mail et pasword pour tester le frontend
 
 **📌 Tous les endpoints nécessitent un Token JWT sauf `/register` et `/login`.**
 
-Authentification
+1. Authentification
 POST /login
 
 Description : Authentifie un utilisateur et retourne un token JWT.
@@ -139,7 +161,7 @@ Réponse :
 
 token : (string) Token JWT pour authentification
 
-Utilisateurs
+2. Utilisateurs
 GET /users
 
 Description : Récupère la liste de tous les utilisateurs.
@@ -160,7 +182,7 @@ email : (string) L'email de l'utilisateur
 
 birthdate : (DateTime) La date de naissance de l'utilisateur
 
-POST /users
+3. POST /users
 
 Description : Crée un nouvel utilisateur.
 
@@ -182,7 +204,7 @@ Réponse :
 
 Détails de l'utilisateur créé (ID, prénom, nom, email, date de naissance).
 
-PUT /users/:id
+5. PUT /users/:id
 
 Description : Met à jour un utilisateur existant.
 
@@ -206,7 +228,7 @@ Réponse :
 
 Détails de l'utilisateur mis à jour (ID, prénom, nom, email, date de naissance).
 
-DELETE /users/:id
+6. DELETE /users/:id
 
 Description : Supprime un utilisateur existant.
 
@@ -245,4 +267,7 @@ Message de confirmation de la suppression de l'utilisateur
 ```
 
 ---
+
+### ESLint, Prettier** - Qualité du code
+
 

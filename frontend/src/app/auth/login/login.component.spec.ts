@@ -14,7 +14,10 @@ describe('LoginComponent', () => {
   let router: jasmine.SpyObj<Router>;
 
   beforeEach(async () => {
-    const authServiceSpy = jasmine.createSpyObj('AuthService', ['login', 'saveToken']);
+    const authServiceSpy = jasmine.createSpyObj('AuthService', [
+      'login',
+      'saveToken',
+    ]);
     const routerSpy = jasmine.createSpyObj('Router', ['navigate']);
 
     await TestBed.configureTestingModule({
@@ -23,7 +26,7 @@ describe('LoginComponent', () => {
       providers: [
         { provide: AuthService, useValue: authServiceSpy },
         { provide: Router, useValue: routerSpy },
-      ]
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(LoginComponent);
@@ -45,7 +48,10 @@ describe('LoginComponent', () => {
     component.password = 'password123';
     component.onLogin();
 
-    expect(authService.login).toHaveBeenCalledWith('test@example.com', 'password123');
+    expect(authService.login).toHaveBeenCalledWith(
+      'test@example.com',
+      'password123'
+    );
     expect(authService.saveToken).toHaveBeenCalledWith('mockToken');
     expect(router.navigate).toHaveBeenCalledWith(['/dashboard']);
   });
@@ -58,7 +64,9 @@ describe('LoginComponent', () => {
     component.password = 'wrongPassword';
     component.onLogin();
 
-    expect(component.errorMessage).toBe('Login failed. Please check your credentials and try again.');
+    expect(component.errorMessage).toBe(
+      'Login failed. Please check your credentials and try again.'
+    );
   });
 
   it('should display an error message if email or password is empty', () => {
@@ -85,7 +93,7 @@ describe('LoginComponent', () => {
     component.password = 'password123';
     component.onLogin();
 
-   // expect(component.isLoading).toBeTrue();
+    // expect(component.isLoading).toBeTrue();
   });
 
   it('should disable the submit button when login is in progress', () => {

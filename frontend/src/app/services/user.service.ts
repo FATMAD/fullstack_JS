@@ -7,9 +7,12 @@ import { AuthService } from './auth.service';
   providedIn: 'root',
 })
 export class UserService {
-  private apiUrl = 'http://localhost:3000/users';  // Update to your backend API
+  private apiUrl = 'http://localhost:3000/users'; // Update to your backend API
 
-  constructor(private http: HttpClient, private authService: AuthService) { }
+  constructor(
+    private http: HttpClient,
+    private authService: AuthService
+  ) {}
 
   getUsers(): Observable<any[]> {
     const headers = this.authService.getAuthHeaders();

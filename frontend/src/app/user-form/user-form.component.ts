@@ -8,11 +8,11 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './user-form.component.html',
   styleUrls: ['./user-form.component.css'],
   imports: [FormsModule],
-  providers: [UserService]
+  providers: [UserService],
 })
 export class UserFormComponent {
-  @Input() user: any = null;  // Input user for editing, null for adding new
-  @Output() userSaved = new EventEmitter<void>();  // Emit an event after saving the user
+  @Input() user: any = null; // Input user for editing, null for adding new
+  @Output() userSaved = new EventEmitter<void>(); // Emit an event after saving the user
 
   firstName: string = '';
   lastName: string = '';
@@ -20,7 +20,7 @@ export class UserFormComponent {
   birthdate: string = '';
   password: string = '';
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService) {}
 
   ngOnInit() {
     if (this.user) {
@@ -33,7 +33,13 @@ export class UserFormComponent {
   }
 
   saveUser() {
-    const userData = { firstName: this.firstName, lastName: this.lastName, email: this.email, birthdate: this.birthdate, password: this.password };
+    const userData = {
+      firstName: this.firstName,
+      lastName: this.lastName,
+      email: this.email,
+      birthdate: this.birthdate,
+      password: this.password,
+    };
 
     if (this.user) {
       this.userService.updateUser(this.user.id, userData).subscribe(() => {

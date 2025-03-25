@@ -1,84 +1,84 @@
 /* Centrage de la page */
 .login-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f7fc;
-  }
-  
-  /* Style du formulaire */
-  .login-box {
-    background: #ffffff;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    width: 100%;
-    max-width: 350px;
-  }
-  
-  /* Titre */
-  h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
-  }
-  
-  /* Champs de saisie */
-  .form-group {
-    margin-bottom: 15px;
-    text-align: left;
-  }
-  
-  label {
-    font-weight: 600;
-    color: #555;
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 16px;
-    transition: 0.3s;
-  }
-  
-  input:focus {
-    outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
-  }
-  
-  /* Bouton de connexion */
-  .login-btn {
-    width: 100%;
-    padding: 10px;
-    font-size: 18px;
-    border-radius: 6px;
-    background: #007bff;
-    border: none;
-    color: white;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  .login-btn:hover {
-    background: #0056b3;
-  }
-  
-  /* Responsive */
-  @media (max-width: 480px) {
-    .login-box {
-      padding: 30px;
-      max-width: 300px;
-    }
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f7fc;
+}
 
-  .register-btn {
+/* Style du formulaire */
+.login-box {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 350px;
+}
+
+/* Titre */
+h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+/* Champs de saisie */
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+label {
+  font-weight: 600;
+  color: #555;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.4);
+}
+
+/* Bouton de connexion */
+.login-btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 6px;
+  background: #007bff;
+  border: none;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.login-btn:hover {
+  background: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-box {
+    padding: 30px;
+    max-width: 300px;
+  }
+}
+
+.register-btn {
   background-color: #007bff; /* Couleur de fond bleue */
   color: white; /* Texte en blanc */
   font-size: 16px; /* Taille du texte */
@@ -86,7 +86,9 @@
   border: none; /* Enlever la bordure */
   border-radius: 5px; /* Coins arrondis */
   cursor: pointer; /* Curseur en forme de main */
-  transition: background-color 0.3s, transform 0.2s; /* Animation douce pour les changements de fond et effet de survol */
+  transition:
+    background-color 0.3s,
+    transform 0.2s; /* Animation douce pour les changements de fond et effet de survol */
 }
 
 .register-btn:hover {
@@ -103,16 +105,16 @@
   background-color: #004085; /* Couleur de fond lorsque le bouton est enfoncé */
 }
 
-  /* Style du lien d'inscription */
+/* Style du lien d'inscription */
 .register-link-text {
-  color: #007bff;  /* Bleu pour le lien */
-  text-decoration: none;  /* Enlever la sous-ligne */
-  font-weight: 600;  /* Text en gras */
-  font-size: 16px;  /* Taille du texte */
-  transition: color 0.3s;  /* Transition douce pour la couleur */
+  color: #007bff; /* Bleu pour le lien */
+  text-decoration: none; /* Enlever la sous-ligne */
+  font-weight: 600; /* Text en gras */
+  font-size: 16px; /* Taille du texte */
+  transition: color 0.3s; /* Transition douce pour la couleur */
 }
 
 .register-link-text:hover {
-  color: #0056b3;  /* Couleur au survol */
-  text-decoration: underline;  /* Ajouter une ligne sous le texte au survol */
+  color: #0056b3; /* Couleur au survol */
+  text-decoration: underline; /* Ajouter une ligne sous le texte au survol */
 }

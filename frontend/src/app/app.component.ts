@@ -19,5 +19,4 @@ import { AuthInterceptor } from './services/auth.interceptor';
 })
 export class AppComponent {
   title = 'frontend';
-
 }
